@@ -36,7 +36,12 @@ Kurulum betiği gerekli bileşenleri ayrıca kontrol eder.
 
 ## Kurulum
 
-Projeyi sunucuya kopyaladıktan sonra proje dizinine girin:
+Projeyi GitHub üzerinden klonlayın:
+
+    git clone https://github.com/mdikbayir/fatura-takip.git
+
+Ardından proje dizinine girin:
+
 
     cd fatura-takip
 
@@ -207,3 +212,9 @@ akışları zaman içerisinde değişebilir. Böyle bir değişiklik collector
 kodlarının güncellenmesini gerektirebilir.
 
 Bu proje resmi CK Enerji, İSKİ, İGDAŞ veya e-Devlet uygulaması değildir.
+
+## Lisans
+
+Bu proje MIT License altında yayımlanmaktadır.
+
+Ayrıntılar için `LICENSE` dosyasına bakın.
