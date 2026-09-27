@@ -20,6 +20,20 @@ Docker tabanlı fatura takip sistemi.
 - Tek komutla kurulum
 - Kurulum öncesi güvenli paket kontrolü
 
+## Ekran Görüntüleri
+
+### ⚡ Elektrik Fatura Takibi
+
+![Elektrik Fatura Takibi](screenshots/elektrik.png)
+
+### 💧 Su Fatura Takibi
+
+![Su Fatura Takibi](screenshots/su.png)
+
+### 🔥 Doğalgaz Fatura Takibi
+
+![Doğalgaz Fatura Takibi](screenshots/dogalgaz.png)
+
 ## Gereksinimler
 
 Desteklenen ortam:
