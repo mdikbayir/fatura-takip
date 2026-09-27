@@ -1,0 +1,11 @@
+[Unit]
+Description=CK Bogazici Fatura Kontrolu
+
+[Timer]
+OnCalendar=*-*-18,20,22,24 10:30:00
+RandomizedDelaySec=5m
+Persistent=false
+Unit=fatura-ck.service
+
+[Install]
+WantedBy=timers.target

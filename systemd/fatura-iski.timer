@@ -1,0 +1,11 @@
+[Unit]
+Description=ISKI Fatura Kontrolu
+
+[Timer]
+OnCalendar=*-*-15,17,19,21,23 10:00:00
+RandomizedDelaySec=5m
+Persistent=false
+Unit=fatura-iski.service
+
+[Install]
+WantedBy=timers.target

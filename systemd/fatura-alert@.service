@@ -1,0 +1,8 @@
+[Unit]
+Description=Fatura Takip Telegram Failure Alert (%i)
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=@SCRIPT_DIR@/fatura-telegram-alert.sh %i

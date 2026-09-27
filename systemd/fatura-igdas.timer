@@ -1,0 +1,11 @@
+[Unit]
+Description=IGDAS Fatura Kontrolu
+
+[Timer]
+OnCalendar=*-*-17,19,21,23 11:00:00
+RandomizedDelaySec=5m
+Persistent=false
+Unit=fatura-igdas.service
+
+[Install]
+WantedBy=timers.target

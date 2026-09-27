@@ -1,0 +1,12 @@
+[Unit]
+Description=Fatura Takip ISKI Akilli Collector
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+OnFailure=fatura-alert@collector.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=@INSTALL_DIR@
+ExecStart=@SCRIPT_DIR@/fatura-smart-collector.sh iski
+TimeoutStartSec=10min

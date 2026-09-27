@@ -1,0 +1,8 @@
+[Unit]
+Description=Fatura Takip Veritabani ve Belge Yedegi
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=@SCRIPT_DIR@/fatura-backup.sh
+ExecStart=@SCRIPT_DIR@/fatura-document-backup.sh

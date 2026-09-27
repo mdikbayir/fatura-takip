@@ -1,0 +1,12 @@
+[Unit]
+Description=Fatura Takip IGDAS Akilli Collector
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+OnFailure=fatura-alert@collector.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=@INSTALL_DIR@
+ExecStart=@SCRIPT_DIR@/fatura-smart-collector.sh igdas
+TimeoutStartSec=10min

@@ -1,0 +1,47 @@
+services:
+  browser:
+    image: lscr.io/linuxserver/chromium:latest
+    container_name: fatura-browser
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/Istanbul
+      - CHROME_CLI=--remote-debugging-port=9222 --remote-debugging-address=0.0.0.0 --remote-allow-origins=http://127.0.0.1:9222 https://online.ckenerji.com.tr/login
+    volumes:
+      - ./auth/chromium:/config
+    ports:
+      - "3100:3000"
+      - "3101:3001"
+    shm_size: "1gb"
+    restart: unless-stopped
+
+  collector:
+    build:
+      context: .
+      dockerfile: Dockerfile.collector
+    image: fatura-collector:public
+    container_name: fatura-collector
+    network_mode: "service:browser"
+    depends_on:
+      - browser
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
+      - ./pdfs:/pdfs
+    restart: "no"
+
+  dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    image: fatura-dashboard:public
+    container_name: fatura-dashboard
+    volumes:
+      - ./data:/data:ro
+      - ./pdfs:/pdfs:ro
+    ports:
+      - "8180:8080"
+    restart: unless-stopped

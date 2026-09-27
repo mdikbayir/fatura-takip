@@ -1,0 +1,11 @@
+[Unit]
+Description=Fatura Takip Gunluk Backup Timer
+
+[Timer]
+OnCalendar=*-*-* 08:00:00
+Persistent=true
+RandomizedDelaySec=5m
+Unit=fatura-backup.service
+
+[Install]
+WantedBy=timers.target
